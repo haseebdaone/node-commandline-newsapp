@@ -5,7 +5,7 @@ var countriesAlpha2 = "ae ar at au be bg br ca ch cn co cu cz de eg fr gb gr hk 
 
 var res = countriesAlpha2.split(" ");
 var countries = [];
-
+// retrieve all country names in an array to use in countries.js
 outputCountryNames = () => {
 
   res.forEach((country) => {
@@ -16,7 +16,7 @@ outputCountryNames = () => {
     return console.log(countries);
 }
 
-// outputCountryNames();
+// retrieve array of languages to use in language.js
 
  outputCountryLanguages = () => {
    var iso6391 = "ar de en es fr he it nl no pt ru se ud zh";
@@ -28,5 +28,3 @@ outputCountryNames = () => {
    });
    return console.log(languages);
  }
-
-// outputCountryLanguages();

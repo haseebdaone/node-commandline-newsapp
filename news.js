@@ -2,12 +2,14 @@ console.log('App has started');
 const yargs = require('yargs');
 
 const countries = require('./countries/countries');
-const languages = require('./countries/languages');
+const languages = require('./language/languages');
 const countryCode = require('./countries/countryCode');
-const changeLanguage = require('./countries/changeLanguage');
-const {getArticles} = require('./getArticles');
-const categories = require('./categories');
-var languageName = require('./countries/language');
+const changeLanguage = require('./language/changeLanguage');
+const {getArticles} = require('./articles/getArticles');
+const categories = require('./categories/categories');
+const changeNumber = require('./articles/resultNumber');
+var number = require('./articles/number');
+var languageName = require('./language/language');
 
 var argv = yargs
   .option('query', {
@@ -26,10 +28,14 @@ var argv = yargs
   })
   .option('category', {
     alias: 'ca',
-    describe: 'choose one of the following categories you want news for',
+    describe: 'choose one of the following categories you want news for (must be used with country argument)',
     choices: categories
   })
-  // .wrap(yargs.terminalWidth())
+  .option('resultNumber', {
+    alias: 'n',
+    describe: 'Change the number of articles you want too see'
+  })
+  .wrap(yargs.terminalWidth())
   .help()
   .argv;
 
@@ -38,17 +44,18 @@ var url2 = `https://newsapi.org/v2/top-headlines?`;
 var language = `&language=${languageName}`;
 var url;
 var apikey = '&apiKey=915a7ab0866e4350b35de7f909568503';
+var pageSize = `&pageSize=${number}`;
 
 if (argv.query) {
-  url =  `${url1}q=${encodeURIComponent(argv.query)}${language}${apikey}&pageSize=5`;
+  url =  `${url1}q=${encodeURIComponent(argv.query)}${language}${apikey}${pageSize}`;
   getArticles(url);
 } else if (argv.category && argv.country) {
   var country = countryCode(argv.country);
-  url =  `${url2}category=${argv.category}&country=${country}${apikey}&pageSize=5`;
+  url =  `${url2}category=${argv.category}&country=${country}${apikey}${pageSize}`;
   getArticles(url);
 } else if (argv.country) {
   var country = countryCode(argv.country);
-  url =  `${url2}country=${country}${language}${apikey}&pageSize=5`;
+  url =  `${url2}country=${country}${language}${apikey}${pageSize}`;
   getArticles(url);
 } else if (argv.language) {
   changeLanguage(argv.language);
@@ -56,4 +63,6 @@ if (argv.query) {
   console.log(`Please specify a country argument with the following chosen category ${argv.category} to obtain results`);
   console.log(`For example:`);
   console.log(`--ca science -c Australia`);
+} else if (argv.resultNumber) {
+  changeNumber(argv.resultNumber);
 }
