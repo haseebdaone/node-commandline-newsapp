@@ -26,6 +26,21 @@ var apikey = 'insert api key here';
 
 ### How to use
 
-<img src="images/node-news1.png">
-<img src="images/node-news2.png">
-<img src="images/node-news3.png">
+Search for the latest news on anything you like (just make sure to use '' for searches that have more than one word) using the following command.
+```
+node news -q 'anything you like here'
+```
+<img src="images/node-news1.png" width="700">
+
+Search on a certain category in a chosen country.
+```
+node news --ca 'category' -c 'country'
+```
+<img src="images/node-news3.png" width="700">
+
+Shows available options and the choices within.     
+(note that you can change the language you get results in but this only works properly for -q)
+```
+node news --help
+```
+<img src="images/node-news2.png" width="700">
