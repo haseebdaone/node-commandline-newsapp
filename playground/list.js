@@ -14,7 +14,7 @@ outputCountryNames = () => {
       countries.push(countryNames);
     });
     return console.log(countries);
-}
+};
 
 // retrieve array of languages to use in language.js
 
@@ -27,4 +27,4 @@ outputCountryNames = () => {
      languages.push(ISO6391.getName(language));
    });
    return console.log(languages);
- }
+ };
