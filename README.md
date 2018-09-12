@@ -5,7 +5,6 @@ You can search for news on anything you like, news related to a specific country
 
 ## Getting started
 
-Make sure to have NodeJs installed https://nodejs.org/en/
 To get a copy of the files clone the repository
 
 ```
@@ -14,3 +13,13 @@ cd node-news/
 npm install
 ```
 or manually download the zip file above and run 'npm install' in the root of the downloaded folder (after being unzipped)
+
+### Prerequisites
+
+Make sure to have NodeJs installed https://nodejs.org/en/    
+To use the app you must have an API key which you can get here for free https://newsapi.org/    
+Once you have your API key paste it in the news.js file where it says
+
+```
+var apikey = 'insert api key here';
+```

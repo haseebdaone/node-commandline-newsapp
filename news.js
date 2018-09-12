@@ -45,8 +45,8 @@ var language = `&language=${languageName}`;
 var url;
 var pageSize = `&pageSize=${number}`;
 
-// place apikey in variable below should be something like this &apiKey=814af4x0866g4350b35fe7g609554503
-var apikey = '&apiKey=915a7ab0866e4350b35de7f909568503';
+// place apikey in variable below should be something like this var apiKey = '&apiKey=814af4x0866g4350b35fe7g609554503'
+var apikey = 'insert api key here';
 
 if (argv.query) {
   url =  `${url1}q=${encodeURIComponent(argv.query)}${language}${apikey}${pageSize}`;
