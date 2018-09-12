@@ -1,3 +1,3 @@
-var number = '10'; 
+var number = '5'; 
  
 module.exports = number;

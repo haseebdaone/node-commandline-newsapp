@@ -1,3 +1,3 @@
-var language = 'en'; 
+var language = 'de'; 
  
 module.exports = language;

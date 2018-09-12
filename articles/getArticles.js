@@ -4,8 +4,7 @@ getArticles = (url) => {
 
   return axios.get(url)
     .then((response) => {
-      console.log(url);
-      console.log('There are this many articles: ', response.data.articles.length);
+      console.log('Number of articles displayed:', response.data.articles.length);
       console.log('--------------');
       var articles = response.data.articles.forEach((element) => {
         console.log(`Title: ${element.title}`);

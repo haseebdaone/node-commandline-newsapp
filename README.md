@@ -23,3 +23,9 @@ Once you have your API key paste it in the news.js file where it says
 ```
 var apikey = 'insert api key here';
 ```
+
+### How to use
+
+<img src="images/node-news1.png">
+<img src="images/node-news2.png">
+<img src="images/node-news3.png">

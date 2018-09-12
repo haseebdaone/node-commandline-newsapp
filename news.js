@@ -49,7 +49,7 @@ var pageSize = `&pageSize=${number}`;
 var apikey = 'insert api key here';
 
 if (argv.query) {
-  url =  `${url1}q=${encodeURIComponent(argv.query)}${language}${apikey}${pageSize}`;
+  url =  `${url1}q=${encodeURIComponent(argv.query)}${language}${apikey}${pageSize}&sortBy=publishedAt`;
   getArticles(url);
 } else if (argv.category && argv.country) {
   var country = countryCode(argv.country);
